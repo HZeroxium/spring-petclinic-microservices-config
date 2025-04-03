@@ -1,7 +1,7 @@
 # dev/values-discovery-server.yaml
 image:
   repository: hzeroxium/spring-petclinic-discovery-server
-  tag: e113803
+  tag: "39a78e1"
   pullPolicy: IfNotPresent
 
 replicas: 1
