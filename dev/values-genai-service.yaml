@@ -1,7 +1,7 @@
 # dev/values-genai-service.yaml
 image:
   repository: hzeroxium/spring-petclinic-genai-service
-  tag: <REPLACED_BY_JENKINS_COMMIT_HASH>
+  tag: latest
 
 replicas: 1
 
@@ -12,6 +12,10 @@ service:
 env:
   - name: SPRING_PROFILES_ACTIVE
     value: dev
+  - name: CONFIG_SERVER_URL
+    value: http://config-server:8888
+  - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+    value: http://discovery-server:8761/eureka
   - name: OPENAI_API_KEY
     value: "<TO_BE_FILLED_BY_SECRETS_MANAGER>"
   - name: AZURE_OPENAI_KEY
@@ -30,11 +34,11 @@ resources:
 readinessProbe:
   path: /actuator/health
   port: 8084
-  initialDelaySeconds: 15
-  periodSeconds: 5
+  initialDelaySeconds: 30
+  periodSeconds: 10
 
 livenessProbe:
   path: /actuator/health
   port: 8084
-  initialDelaySeconds: 30
-  periodSeconds: 10
+  initialDelaySeconds: 60
+  periodSeconds: 15

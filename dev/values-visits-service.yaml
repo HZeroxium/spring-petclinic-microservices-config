@@ -1,15 +1,13 @@
-# dev/values-customers-service.yaml
-# This file contains the values for the customers service in dev environment.
-# It is used to override the default values in the chart.
+# dev/values-visits-service.yaml
 image:
-  repository: hzeroxium/spring-petclinic-customers-service
+  repository: hzeroxium/spring-petclinic-visits-service
   tag: latest
   pullPolicy: IfNotPresent
 
 replicas: 1
 
 service:
-  port: 8081
+  port: 8082
   type: ClusterIP
 
 env:
@@ -30,12 +28,12 @@ resources:
 
 readinessProbe:
   path: /actuator/health
-  port: 8081
+  port: 8082
   initialDelaySeconds: 30
   periodSeconds: 10
 
 livenessProbe:
   path: /actuator/health
-  port: 8081
+  port: 8082
   initialDelaySeconds: 60
   periodSeconds: 15
