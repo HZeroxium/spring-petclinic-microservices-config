@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/your-org/spring-petclinic-microservices-config
+    repoURL: https://github.com/HZeroxium/spring-petclinic-microservices-config
     path: apps/dev # If deploy to dev environment, or if you want to deploy to other environment, change this path to apps/staging or apps/prod
     targetRevision: HEAD
   destination:
