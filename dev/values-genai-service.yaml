@@ -16,12 +16,12 @@ env:
     value: http://config-server:8888
   - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
     value: http://discovery-server:8761/eureka
-  - name: OPENAI_API_KEY
-    value: "<TO_BE_FILLED_BY_SECRETS_MANAGER>"
-  - name: AZURE_OPENAI_KEY
-    value: "<TO_BE_FILLED_BY_SECRETS_MANAGER>"
-  - name: AZURE_OPENAI_ENDPOINT
-    value: "<TO_BE_FILLED_BY_SECRETS_MANAGER>"
+  # - name: OPENAI_API_KEY
+  #   value: "<TO_BE_FILLED_BY_SECRETS_MANAGER>"
+  # - name: AZURE_OPENAI_KEY
+  #   value: "<TO_BE_FILLED_BY_SECRETS_MANAGER>"
+  # - name: AZURE_OPENAI_ENDPOINT
+  #   value: "<TO_BE_FILLED_BY_SECRETS_MANAGER>"
 
 resources:
   limits:
