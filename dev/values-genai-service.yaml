@@ -1,0 +1,40 @@
+# dev/values-genai-service.yaml
+image:
+  repository: hzeroxium/spring-petclinic-genai-service
+  tag: <REPLACED_BY_JENKINS_COMMIT_HASH>
+
+replicas: 1
+
+service:
+  port: 8084
+  type: ClusterIP
+
+env:
+  - name: SPRING_PROFILES_ACTIVE
+    value: dev
+  - name: OPENAI_API_KEY
+    value: "<TO_BE_FILLED_BY_SECRETS_MANAGER>"
+  - name: AZURE_OPENAI_KEY
+    value: "<TO_BE_FILLED_BY_SECRETS_MANAGER>"
+  - name: AZURE_OPENAI_ENDPOINT
+    value: "<TO_BE_FILLED_BY_SECRETS_MANAGER>"
+
+resources:
+  limits:
+    cpu: "1"
+    memory: "1024Mi"
+  requests:
+    cpu: "500m"
+    memory: "512Mi"
+
+readinessProbe:
+  path: /actuator/health
+  port: 8084
+  initialDelaySeconds: 15
+  periodSeconds: 5
+
+livenessProbe:
+  path: /actuator/health
+  port: 8084
+  initialDelaySeconds: 30
+  periodSeconds: 10

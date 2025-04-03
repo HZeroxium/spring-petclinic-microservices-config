@@ -1,0 +1,41 @@
+# dev/values-customers-service.yaml
+# This file contains the values for the customers service in dev environment.
+# It is used to override the default values in the chart.
+image:
+  repository: hzeroxium/spring-petclinic-customers-service
+  tag: latest
+  pullPolicy: IfNotPresent
+
+replicas: 2
+
+service:
+  port: 8081
+  type: ClusterIP
+
+env:
+  - name: SPRING_PROFILES_ACTIVE
+    value: dev
+  - name: CONFIG_SERVER_URL
+    value: http://config-server:8888
+  - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+    value: http://discovery-server:8761/eureka
+
+resources:
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+  requests:
+    cpu: "250m"
+    memory: "256Mi"
+
+readinessProbe:
+  path: /actuator/health
+  port: 8081
+  initialDelaySeconds: 10
+  periodSeconds: 5
+
+livenessProbe:
+  path: /actuator/health
+  port: 8081
+  initialDelaySeconds: 20
+  periodSeconds: 10
