@@ -1,1 +1,4 @@
 .vscode
+*.ps1
+
+*.txt

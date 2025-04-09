@@ -16,7 +16,7 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-        - ../../dev/values-visits-service.yaml
+        - ../../values/dev/values-visits-service.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: petclinic-dev

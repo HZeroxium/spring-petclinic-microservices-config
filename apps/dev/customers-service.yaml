@@ -1,3 +1,4 @@
+# apps/dev/customers-service.yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -15,7 +16,7 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-        - ../../dev/values-customers-service.yaml
+        - ../../values/dev/values-customers-service.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: petclinic-dev

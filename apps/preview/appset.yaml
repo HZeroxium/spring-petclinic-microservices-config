@@ -1,0 +1,35 @@
+# apps/preview/appset.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: preview-apps
+  namespace: argocd
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/HZeroxium/spring-petclinic-microservices-config.git
+        revision: HEAD
+        directories:
+          - path: values/preview/*    # Mỗi folder con trong values/preview/<feature>/
+  template:
+    metadata:
+      name: '{{path.basename}}-{{serviceName}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/HZeroxium/spring-petclinic-microservices-config
+        targetRevision: HEAD
+        path: charts/spring-petclinic-service
+        helm:
+          valueFiles:
+            # Lấy file override
+            - values/preview/{{path.basename}}/*.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: 'preview-{{path.basename}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
