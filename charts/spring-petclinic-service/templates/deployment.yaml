@@ -1,4 +1,4 @@
-# /charts/spring-petclinic-service/chart/templates/deployment.yaml
+{% comment %} # /charts/spring-petclinic-service/chart/templates/deployment.yaml {% endcomment %}
 apiVersion: apps/v1
 kind: Deployment
 metadata:

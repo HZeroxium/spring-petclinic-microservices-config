@@ -1,4 +1,4 @@
-# /charts/spring-petclinic-service/chart/templates/)helpers.tpl
+{% comment %} # /charts/spring-petclinic-service/chart/templates/_helpers.tpl {% endcomment %}
 {{/*
 Generate a fullname for the release
 */}}

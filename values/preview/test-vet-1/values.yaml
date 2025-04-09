@@ -1,10 +1,15 @@
-
+# values/preview/test-vet-1/values.yaml
 image:
   repository: hzeroxium/spring-petclinic-vets-service
   tag: "45d9ee0"
   pullPolicy: IfNotPresent
 
 replicas: 1
+
+ingress:
+  enabled: true
+  name: test-vet-1-ingress
+  host: test-vet-1.petclinic.local
 
 service:
   port: 8083
