@@ -1,13 +1,13 @@
-# apps/dev/config-server.yaml
+# apps/staging/discovery-server.yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: config-server
+  name: discovery-server
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   labels:
-    environment: dev
+    environment: staging
 spec:
   project: default
   source:
@@ -16,10 +16,10 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-        - ../../values/dev/values-config-server.yaml
+        - ../../values/staging/values-discovery-server.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: petclinic-dev
+    namespace: petclinic-staging
   syncPolicy:
     automated:
       prune: true
