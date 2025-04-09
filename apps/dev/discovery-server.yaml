@@ -29,5 +29,3 @@ spec:
       - CreateNamespace=true
       - PruneLast=true
       - ApplyOutOfSyncOnly=true
-  helm:
-    releaseName: discovery-server
