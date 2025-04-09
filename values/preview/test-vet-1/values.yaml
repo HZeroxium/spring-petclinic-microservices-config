@@ -6,11 +6,6 @@ image:
 
 replicas: 1
 
-ingress:
-  enabled: true
-  name: test-vet-1-ingress
-  host: test-vet-1.petclinic.local
-
 service:
   port: 8083
   type: ClusterIP

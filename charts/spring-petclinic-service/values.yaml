@@ -6,10 +6,6 @@ image:
   tag: latest
   pullPolicy: IfNotPresent
 
-ingress:
-  enabled: false
-  name: ""
-  host: ""
 
 service:
   type: ClusterIP
