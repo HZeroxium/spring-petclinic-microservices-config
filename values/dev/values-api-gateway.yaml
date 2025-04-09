@@ -1,7 +1,7 @@
 # dev/values-api-gateway.yaml
 image:
   repository: hzeroxium/spring-petclinic-api-gateway
-  tag: latest
+  tag: "248e4f1"
   pullPolicy: IfNotPresent
 
 replicas: 1

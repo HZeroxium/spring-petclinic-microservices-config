@@ -3,7 +3,7 @@
 # It is used to override the default values in the chart.
 image:
   repository: hzeroxium/spring-petclinic-customers-service
-  tag: latest
+  tag: "248e4f1"
   pullPolicy: IfNotPresent
 
 replicas: 1

@@ -1,7 +1,7 @@
 # dev/values-genai-service.yaml
 image:
   repository: hzeroxium/spring-petclinic-genai-service
-  tag: latest
+  tag: "248e4f1"
 
 replicas: 1
 

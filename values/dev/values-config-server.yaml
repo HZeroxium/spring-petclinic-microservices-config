@@ -1,7 +1,7 @@
 # dev/values-config-server.yaml
 image:
   repository: hzeroxium/spring-petclinic-config-server
-  tag: latest
+  tag: "248e4f1"
   pullPolicy: IfNotPresent
 
 replicas: 1
