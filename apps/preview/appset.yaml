@@ -23,6 +23,7 @@ spec:
                 - name: config-server
                 - name: discovery-server
                 - name: genai-service
+                - name: ingress
   template:
     metadata:
       name: '{{path.basename}}-{{name}}'
