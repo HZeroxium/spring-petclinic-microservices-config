@@ -6,25 +6,26 @@ metadata:
   namespace: argocd
 spec:
   generators:
-  - git:
-      repoURL: https://github.com/HZeroxium/spring-petclinic-microservices-config.git
-      revision: HEAD
-      directories:
-        - path: values/preview/*
+    - git:
+        repoURL: 'https://github.com/HZeroxium/spring-petclinic-microservices-config.git'
+        revision: HEAD
+        directories:
+          - path: 'apps/preview/preview-*'  # Match từng preview folder
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: '{{path.basename}}-{{name}}'  # ví dụ: preview-test-vet-1-vets-service
     spec:
       project: default
       source:
-        repoURL: https://github.com/HZeroxium/spring-petclinic-microservices-config
+        repoURL: 'https://github.com/HZeroxium/spring-petclinic-microservices-config'
         targetRevision: HEAD
-        path: charts/spring-petclinic-service
+        path: 'charts/spring-petclinic-service'
         helm:
           valueFiles:
-            - ../../values/preview/{{path.basename}}/values.yaml
+            - ../../values/preview/{{path.basename}}/values-{{name}}.yaml
+          releaseName: '{{name}}'
       destination:
-        server: https://kubernetes.default.svc
+        server: 'https://kubernetes.default.svc'
         namespace: 'preview-{{path.basename}}'
       syncPolicy:
         automated:
