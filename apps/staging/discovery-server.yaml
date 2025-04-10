@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: discovery-server
+  name: discovery-server-staging
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -17,6 +17,7 @@ spec:
     helm:
       valueFiles:
         - ../../values/staging/values-discovery-server.yaml
+      releaseName: discovery-server
   destination:
     server: https://kubernetes.default.svc
     namespace: petclinic-staging
