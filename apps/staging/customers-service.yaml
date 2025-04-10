@@ -17,6 +17,7 @@ spec:
     helm:
       valueFiles:
         - ../../values/staging/values-customers-service.yaml
+      releaseName: customers-service
   destination:
     server: https://kubernetes.default.svc
     namespace: petclinic-staging

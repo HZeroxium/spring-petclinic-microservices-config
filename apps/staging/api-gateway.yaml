@@ -17,6 +17,7 @@ spec:
     helm:
       valueFiles:
         - ../../values/staging/values-api-gateway.yaml
+      releaseName: api-gateway
   destination:
     server: https://kubernetes.default.svc
     namespace: petclinic-staging

@@ -17,6 +17,7 @@ spec:
     helm:
       valueFiles:
         - ../../values/staging/values-admin-server.yaml
+      releaseName: admin-server
   destination:
     server: https://kubernetes.default.svc
     namespace: petclinic-staging

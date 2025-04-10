@@ -17,6 +17,7 @@ spec:
     helm:
       valueFiles:
         - ../../values/dev/values-admin-server.yaml
+      releaseName: admin-server
   destination:
     server: https://kubernetes.default.svc
     namespace: petclinic-dev

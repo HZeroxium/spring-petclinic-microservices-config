@@ -17,6 +17,7 @@ spec:
     helm:
       valueFiles:
         - ../../values/staging/values-genai-service.yaml
+      releaseName: genai-service
   destination:
     server: https://kubernetes.default.svc
     namespace: petclinic-staging
