@@ -14,7 +14,7 @@ env:
   - name: SPRING_PROFILES_ACTIVE
     value: docker
   - name: CONFIG_SERVER_URL
-    value: http://config-server:8888
+    value: http://config-server-dev:8888
 
 resources:
   limits:
