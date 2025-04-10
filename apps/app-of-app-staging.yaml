@@ -3,7 +3,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: petclinic-apps
+  name: petclinic-apps-staging
   namespace: argocd # This is the namespace where ArgoCD is installed, make sure to change it if you have a different namespace
 spec:
   project: default
@@ -13,7 +13,7 @@ spec:
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd 
+    namespace: petclinic-staging
   syncPolicy:
     automated:
       prune: true

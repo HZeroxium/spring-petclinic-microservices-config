@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ingress-dev
+  name: ingress-staging
   namespace: argocd
 spec:
   project: default
