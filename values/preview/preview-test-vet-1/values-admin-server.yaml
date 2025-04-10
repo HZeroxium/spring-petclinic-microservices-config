@@ -1,4 +1,4 @@
-
+# values/preview/preview-test-vet-1/values-admin-server.yaml
 image:
   repository: hzeroxium/spring-petclinic-admin-server
   tag: "latest"

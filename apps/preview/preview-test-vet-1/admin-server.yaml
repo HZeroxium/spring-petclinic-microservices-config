@@ -1,4 +1,4 @@
-
+# apps/preview/preview-test-vet-1/admin-server.yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -12,7 +12,7 @@ spec:
     path: charts/spring-petclinic-service
     helm:
       valueFiles:
-        - ../../../values/preview/preview-test-vet-1/values-admin-server.yaml
+        - ../../values/preview/preview-test-vet-1/values-admin-server.yaml
       releaseName: admin-server
   destination:
     server: https://kubernetes.default.svc

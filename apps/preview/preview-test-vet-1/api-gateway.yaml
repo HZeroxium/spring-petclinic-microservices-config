@@ -12,7 +12,7 @@ spec:
     path: charts/spring-petclinic-service
     helm:
       valueFiles:
-        - ../../../values/preview/preview-test-vet-1/values-api-gateway.yaml
+        - ../../values/preview/preview-test-vet-1/values-api-gateway.yaml
       releaseName: api-gateway
   destination:
     server: https://kubernetes.default.svc

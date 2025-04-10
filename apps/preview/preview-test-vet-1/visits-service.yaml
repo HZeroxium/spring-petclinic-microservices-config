@@ -12,7 +12,7 @@ spec:
     path: charts/spring-petclinic-service
     helm:
       valueFiles:
-        - ../../../values/preview/preview-test-vet-1/values-visits-service.yaml
+        - ../../values/preview/preview-test-vet-1/values-visits-service.yaml
       releaseName: visits-service
   destination:
     server: https://kubernetes.default.svc
