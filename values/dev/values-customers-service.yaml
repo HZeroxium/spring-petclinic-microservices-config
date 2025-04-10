@@ -11,6 +11,7 @@ replicas: 1
 service:
   port: 8081
   type: ClusterIP
+  name: customers-service
 
 env:
   - name: SPRING_PROFILES_ACTIVE

@@ -9,6 +9,7 @@ replicas: 1
 service:
   port: 8888
   type: ClusterIP
+  name: config-server
 
 env:
   - name: SPRING_PROFILES_ACTIVE
