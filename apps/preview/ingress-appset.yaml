@@ -10,16 +10,18 @@ spec:
         repoURL: 'https://github.com/HZeroxium/spring-petclinic-microservices-config.git'
         revision: HEAD
         directories:
-          - path: 'apps/preview/preview-*/ingress.yaml'
+          - path: 'ingress/preview/preview-*'
   template:
     metadata:
-      name: '{{path.basename}}-ingress'
+      name: 'ingress-{{path.basename}}'
     spec:
       project: default
       source:
         repoURL: 'https://github.com/HZeroxium/spring-petclinic-microservices-config'
         targetRevision: HEAD
-        path: 'ingress/preview/{{path.basename}}'
+        path: 'ingress/preview/{{path.basename}}'  
+        directory:
+          recurse: true                        
       destination:
         server: https://kubernetes.default.svc
         namespace: 'preview-{{path.basename}}'
@@ -27,3 +29,4 @@ spec:
         automated:
           prune: true
           selfHeal: true
+
