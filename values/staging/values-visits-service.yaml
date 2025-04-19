@@ -1,7 +1,7 @@
 # staging/values-visits-service.yaml
 image:
   repository: hzeroxium/spring-petclinic-visits-service
-  tag: "248e4f1"
+  tag: "v1.0.7"
   pullPolicy: IfNotPresent
 
 replicas: 1
