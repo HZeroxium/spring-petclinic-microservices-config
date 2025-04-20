@@ -1,7 +1,7 @@
 # dev/values-vets-service.yaml
 image:
   repository: hzeroxium/spring-petclinic-vets-service
-  tag: "fe550ad"
+  tag: "a24c4a9"
   pullPolicy: IfNotPresent
 
 replicas: 1
